@@ -1,8 +1,4 @@
-var image = new Image();
 
-function upload(image) {
-    
-}
 
 function getBase64Image(img) {
     // Create an empty canvas element
@@ -22,3 +18,7 @@ function getBase64Image(img) {
 
     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
+
+var imagesrc = document.getElementById("image");
+imagesrc.src = dataURL;
+console.log(imagesrc.src);
