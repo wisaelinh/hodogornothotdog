@@ -10,3 +10,24 @@ input {
     height: 25px;
     
 }
+.container {
+    width: 300px;
+    background-color: red;
+    margin: auto;
+    display: inline-block;
+}
+  first {
+    width: 100px;
+    float: left;
+    height: 300px;
+        background-color: blue;
+}
+  second {
+    width: 200px;
+    float: left;
+    height: 300px;
+    background-color: green;
+}
+  clear {
+    clear: both;
+}
