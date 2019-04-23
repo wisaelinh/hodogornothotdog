@@ -1,24 +1,45 @@
+function startUpload() {
+  var fileInput = document.getElementById("myFile");
 
+  var xhr = new XMLHttpRequest();
 
-function getBase64Image(img) {
-    // Create an empty canvas element
-    var canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
+  xhr.onload = function() {
+    if(xhr.readyState === xhr.DONE) {
+      if (xhr.status == 200 && xhr.readyState == 4) {
+        alert("Successful!");
+        console.log(xhr.responseText);
+      }
+      else {
+        alert("Try Again");
+      }
+    }
+  };
 
-    // Copy the image contents to the canvas
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
+  xhr.onerror = function() {
+    alert("Error! Upload failed. Can not connect to server.");
+  };
 
-    // Get the data-URL formatted image
-    // Firefox supports PNG and JPEG. You could check img.src to
-    // guess the original format, but be aware the using "image/jpg"
-    // will re-encode the image.
-    var dataURL = canvas.toDataURL("image/png");
-
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+  xhr.open("POST", 'https://httpbin.org/post', true);
+  xhr.setRequestHeader("Content-Type", fileInput.files[0].type);
+  xhr.send(fileInput.files[0]);
+  xhr.responseType = "text";
+  var body = xhr.response;
+  console.log(body);
 }
 
-var imagesrc = document.getElementById("image");
-imagesrc.src = dataURL;
-console.log(imagesrc.src);
+var reader = new FileReader();
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+
+    reader.onload = function (e) {
+      document.getElementById('img').src=reader.result;
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$('#myFile').change(function(){
+  readURL(this);
+})
