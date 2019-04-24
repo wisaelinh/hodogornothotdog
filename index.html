@@ -13,19 +13,26 @@
 <body>
    
     <div class="container">
-        <div>
+        <div class="col">
             <form id="uploadForm">
                 <input type="file" id="myFile" name="image">
+                <br>
                 <button type="button" onclick="post()">Submit</button>
             </form>
             <img id="img" width="200px" src="#">
         </div>
 
+        <div class="col initial right">
+          What is the image?
+        </div>
+        <div class="col failure right">
+          Is not a hot dog
+        </div>
+        <div class="col success right">
+          Is a hot dog
+        </div>
+
         
-        <div class="col-sm1">
-        </div>
-        <div class="col-sm2">
-        </div>
     </div>
     
   

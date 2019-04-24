@@ -15,9 +15,18 @@ input {
     display:flex;
     
 }
-.col-sm1{
-    background-color: chartreuse;
+.initial{
+    background-color: white;
 }
-.col-sm2{
+.failure{
     background-color: red;
+}
+.success{
+    background-color: chartreuse;
+    
+}
+.right{
+    font-size: 30px;
+    display:flex;
+    align-items: center;
 }
