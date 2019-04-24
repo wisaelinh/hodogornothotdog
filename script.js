@@ -1,4 +1,5 @@
 var reader = new FileReader();
+var isHotDog;
 
 function readURL(input) {
   if (input.files && input.files[0]) {
@@ -18,14 +19,22 @@ $('#myFile').change(function(){
 function post() {
   const data = new FormData(uploadForm);
   const url = 'http://imagga-proxy.herokuapp.com/v2/tags'
-
+  console.log(data);
+  
   fetch(url, { method: 'post', body: data })
     .then(res => res.json())
     .then(handleResponse)
 }
 
 function handleResponse({ status, result }) {
-  console.log(result)
-  var tag = JSON.parse(result);
-  console.log(tag.)
+  result.tags.forEach(element => {
+    if (element.tag.en == "hot dog") {
+      isHotDog = true;
+    }
+  });
+  if (!isHotDog) {
+    isHotDog = false;
+  }
+  console.log(isHotDog);
+  
 }
