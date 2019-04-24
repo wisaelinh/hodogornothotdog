@@ -15,13 +15,13 @@ input {
     display:flex;
     
 }
-.initial{
+#initial{
     background-color: white;
 }
-.failure{
+#fail{
     background-color: red;
 }
-.success{
+#success{
     background-color: chartreuse;
     
 }
