@@ -1,32 +1,3 @@
-function startUpload() {
-  var fileInput = document.getElementById("myFile");
-
-  var xhr = new XMLHttpRequest();
-
-  xhr.onload = function() {
-    if(xhr.readyState === xhr.DONE) {
-      if (xhr.status == 200 && xhr.readyState == 4) {
-        alert("Successful!");
-        console.log(xhr.responseText);
-      }
-      else {
-        alert("Try Again");
-      }
-    }
-  };
-
-  xhr.onerror = function() {
-    alert("Error! Upload failed. Can not connect to server.");
-  };
-
-  xhr.open("POST", 'https://httpbin.org/post', true);
-  xhr.setRequestHeader("Content-Type", fileInput.files[0].type);
-  xhr.send(fileInput.files[0]);
-  xhr.responseType = "text";
-  var body = xhr.response;
-  console.log(body);
-}
-
 var reader = new FileReader();
 
 function readURL(input) {
@@ -43,3 +14,18 @@ function readURL(input) {
 $('#myFile').change(function(){
   readURL(this);
 })
+
+function post() {
+  const data = new FormData(uploadForm);
+  const url = 'http://imagga-proxy.herokuapp.com/v2/tags'
+
+  fetch(url, { method: 'post', body: data })
+    .then(res => res.json())
+    .then(handleResponse)
+}
+
+function handleResponse({ status, result }) {
+  console.log(result)
+  var tag = JSON.parse(result);
+  console.log(tag.)
+}

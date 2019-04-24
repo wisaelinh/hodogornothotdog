@@ -7,15 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </head>
 <body>
    
     <div class="container">
         <div>
-            <img alt="Choose an image to check" src="" id="image">
-            <label for="myFile">Upload an image</label>
-            <input type="file" id="myFile">
+            <form id="uploadForm">
+                <input type="file" id="myFile" name="image">
+                <button type="button" onclick="post()">Submit</button>
+            </form>
         </div>
 
         
@@ -30,10 +32,6 @@
   
 
 <!-- https://medium.com/@deepakputtarangaswamy/image-classification-with-the-client-side-neural-network-using-tensorflow-js-8f94d3dc7c5c -->
-
-
-
-
 
     <script src="script.js"></script>
 
