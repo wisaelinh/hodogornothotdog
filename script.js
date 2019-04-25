@@ -1,6 +1,7 @@
 var reader = new FileReader();
 var isHotDog;
 var confidenceLevel;
+const url = 'http://imagga-proxy.herokuapp.com/v2/tags'
 
 function init() {
   $('#success').hide();
@@ -25,10 +26,22 @@ $('#myFile').change(function(){
   readURL(this);
 })
 
+function getImage() {
+
+  var val = $('#url').val()
+
+  if (val) {
+    var callURL = url + '?image_url=' + val
+    fetch(callURL).then(res => res.json()).then(handleResponse)
+  } else {
+    alert('please enter an image url')
+  }
+}
+
+
+
 function post() {
   const data = new FormData(uploadForm);
-  const url = 'http://imagga-proxy.herokuapp.com/v2/tags'
-  
   fetch(url, { method: 'post', body: data })
     .then(res => res.json())
     .then(handleResponse)

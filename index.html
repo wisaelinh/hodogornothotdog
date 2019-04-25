@@ -14,21 +14,26 @@
    
     <div class="container">
         <div class="col">
-            <form id="uploadForm">
-                <input type="file" id="myFile" name="image" onclick="init()">
-                <br>
-                <button type="button" onclick="post()">Submit</button>
+            <form id="uploadURL">
+                <p>Method 1: URL</p>
+                <input type="url" id="url" placeholder="Input Image URL Here">
+                <button onclick="getImage()" type="button">Submit</button>
             </form>
-            <img id="img" width="200px" src="#">
-            
+            <img id="im" width="250px" src="#" onerror="this.style.display='none'">
+            <form id="uploadForm">
+                <p>Method 2: Local File</p>
+                <input type="file" id="myFile" name="image" onclick="init()">
+                <button onclick="post()" type="button">Submit</button>
+            </form>
+            <img id="img" width="250px" src="#" >
         </div>
-
+        
         <div id="initial" class="col right">
             What is the image?
          </div>
 
         <div id="fail" class="col right">
-            <p>Is not</p>
+            <p>Is not a hotdog</p>
         </div>
 
         <div id="success"class="col right">
