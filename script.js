@@ -1,8 +1,13 @@
 var reader = new FileReader();
 var isHotDog;
 
-  $('#success').hide()
-  $('#fail').hide()
+function init() {
+  $('#success').hide();
+  $('#fail').hide();
+  $('#initial').show();
+}
+
+$(document).ready(init());
 
 function readURL(input) {
   if (input.files && input.files[0]) {
@@ -30,24 +35,24 @@ function post() {
 
 function handleResponse({ status, result }) {
   result.tags.forEach(element => {
-    console.log(element.tag);
-    
+
     if (element.tag.en == "hot dog") {
       isHotDog = true;
     }
+
   });
+
   if (!isHotDog) {
     isHotDog = false;
   }
+  
   console.log(isHotDog);
   if (isHotDog) {
-
     $('#success').show()
     $('#initial').hide()
   }
 
   else {
-
     $('#fail').show()
     $('#initial').hide()
   }

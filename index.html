@@ -15,29 +15,27 @@
     <div class="container">
         <div class="col">
             <form id="uploadForm">
-                <input type="file" id="myFile" name="image">
+                <input type="file" id="myFile" name="image" onclick="init()">
                 <br>
                 <button type="button" onclick="post()">Submit</button>
             </form>
             <img id="img" width="200px" src="#">
+            
         </div>
-            <div id="initial" class="col right">
+
+        <div id="initial" class="col right">
             What is the image?
-            </div>
-            <div id="fail" class="col right">
+         </div>
+
+        <div id="fail" class="col right">
             Is not a hot dog
-            </div>
-            <div id="success"class="col right">
+        </div>
+
+        <div id="success"class="col right">
             Is a hot dog
-            </div>
+        </div>
             
     </div>
-    
-  
-   
-  
-
-<!-- https://medium.com/@deepakputtarangaswamy/image-classification-with-the-client-side-neural-network-using-tensorflow-js-8f94d3dc7c5c -->
 
     <script src="script.js"></script>
 
