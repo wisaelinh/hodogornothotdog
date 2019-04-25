@@ -1,5 +1,6 @@
 var reader = new FileReader();
 var isHotDog;
+var confidenceLevel;
 
 function init() {
   $('#success').hide();
@@ -34,10 +35,13 @@ function post() {
 }
 
 function handleResponse({ status, result }) {
+  console.log(result);
+  
   result.tags.forEach(element => {
 
     if (element.tag.en == "hot dog") {
       isHotDog = true;
+      confidenceLevel = element.confidence;
     }
 
   });
@@ -45,15 +49,17 @@ function handleResponse({ status, result }) {
   if (!isHotDog) {
     isHotDog = false;
   }
-  
+
   console.log(isHotDog);
   if (isHotDog) {
     $('#success').show()
     $('#initial').hide()
+    document.getElementById('isHotdog').innerHTML = "Is a hotdog with " + confidenceLevel + "% accuracy";
   }
 
   else {
     $('#fail').show()
     $('#initial').hide()
+
   }
 }
