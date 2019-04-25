@@ -1,7 +1,7 @@
 var reader = new FileReader();
 var isHotDog;
 var confidenceLevel;
-const url = 'http://imagga-proxy.herokuapp.com/v2/tags'
+const url = 'https://imagga-proxy.herokuapp.com/v2/tags'
 
 function init() {
   $('#success').hide();
