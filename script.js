@@ -26,6 +26,13 @@ $('#localFile').change(function(){
   readURL(this);
 })
 
+$('#url').change(function(event) {
+  const target = $(event.target)
+  target.css('display', 'block')
+  const imgUrl = target.val()
+  $('#urlImg').attr('src', imgUrl)
+})
+
 function getImage() {
 
   var val = $('#url').val()
