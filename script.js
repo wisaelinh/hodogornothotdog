@@ -22,11 +22,6 @@ function readURL(input) {
   }
 }
 
-var loadFile = function(event) {
-  var output = document.getElementById('urlImg');
-  output.src = $('#url').val();
-};
-
 $('#localFile').change(function(){
   readURL(this);
 })
@@ -39,11 +34,9 @@ function getImage() {
     var callURL = url + '?image_url=' + val
     fetch(callURL).then(res => res.json()).then(handleResponse)
   } else {
-    alert('please enter an image url')
+    alert('Please Enter An Image URL')
   }
 }
-
-
 
 function post() {
   const data = new FormData(uploadForm);

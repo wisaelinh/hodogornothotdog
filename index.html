@@ -16,10 +16,10 @@
         <div class="col">
             <form id="uploadURL">
                 <p>Method 1: URL</p>
-                <input type="url" id="url" placeholder="Input Image URL Here" onchange="loadThis(event)">
+                <input type="url" id="url" placeholder="Input Image URL Here" >
                 <button onclick="getImage()" type="button">Submit</button>
                 <br>
-                <img id="urlImg" width="250px" src="#">
+                <img id="urlImg" width="250px" src="#" onerror="this.style.display='none'">
             </form>
             
             <form id="uploadForm">
@@ -27,7 +27,7 @@
                 <input type="file" id="localFile" name="image" onclick="init()">
                 <button onclick="post()" type="button">Submit</button>
                 <br>
-                <img id="local" width="250px" src="#" onerror="this.style.display='none'">
+                <img id="local" width="250px" src="#">
             </form>
             
         </div>
