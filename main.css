@@ -1,6 +1,5 @@
 div {
     border: 1px;
-    border-style: dashed;
     width: 300px;
     height: 500px;
 }
@@ -8,15 +7,17 @@ div {
 input {
     width: 200px;
     height: 25px;
-    
 }
 
 .container {
     display:flex;
-    
+    border-style: dashed;
+    align-items: center;
 }
 #initial{
     background-color: white;
+    border-bottom-style: dashed;
+    border-top-style: dashed;
 }
 #fail{
     background-color: red;
@@ -29,4 +30,8 @@ input {
     font-size: 30px;
     display:flex;
     align-items: center;
+}
+
+form + form {
+    margin-top: 40px;
 }

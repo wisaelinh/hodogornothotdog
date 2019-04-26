@@ -15,14 +15,19 @@ function readURL(input) {
   if (input.files && input.files[0]) {
 
     reader.onload = function (e) {
-      document.getElementById('img').src=reader.result;
+      document.getElementById('local').src=reader.result;
     }
 
     reader.readAsDataURL(input.files[0]);
   }
 }
 
-$('#myFile').change(function(){
+var loadFile = function(event) {
+  var output = document.getElementById('urlImg');
+  output.src = $('#url').val();
+};
+
+$('#localFile').change(function(){
   readURL(this);
 })
 
