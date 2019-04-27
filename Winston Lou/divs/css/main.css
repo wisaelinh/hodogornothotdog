@@ -1,0 +1,58 @@
+.box{
+    width: 33%;
+    height: 33%;
+    position:absolute;
+}
+#box1{
+    background-color: red;
+    top: 50px;
+    left: 50px;
+}
+
+#box2{
+    background-color: green;
+    top: 50;
+    left: 400;
+}
+
+#box3{
+    background-color: blue;
+    top: 400;
+    left: 50;
+}
+    
+#box4{
+    background-color: yellow;
+    top: 400;
+    left: 400;
+}
+
+#box5{
+    background-color: black;
+    top: 50;
+    left: 750;
+}
+
+#box6{
+    background-color: aqua;
+    top: 400;
+    left: 750;
+}
+
+#box7{
+    background-color: brown;
+    top: 750;
+    left: 50;
+}
+
+#box8{
+    background-color: pink;
+    top: 750;
+    left: 400;
+}
+
+#box9{
+    background-color: gray;
+    top: 750;
+    left: 750;
+}
